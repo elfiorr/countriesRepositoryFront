@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="border">
+    <button class="btn btn-md btn-outline-primary">
+      <i class="fa fa-user"></i>Add country
+    </button>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name of country</th>
+      <th>Capital</th>
+      <th>Surface</th>
+      <th>Country code</th>
+      <th>Telephone Code</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let country of countries">
+      <td><span>{{country.id}}</span></td>
+      <td><span>{{country.nameOfCountry}}</span></td>
+      <td><span>{{country.capital}}</span></td>
+      <td><span>{{country.surface}}</span></td>
+      <td><span>{{country.countryCode}}</span></td>
+      <td><span>{{country.telephoneCode}}</span></td>
+      <td>
+        <button class="btn btn-sm btn-info">
+          <i class="fa fa-search"></i>Details
+        </button>
+        <button class="btn btn-sm btn-warning">
+          <i class="fa fa-edit"></i>Edit
+        </button>
+        <button class="btn btn-sm btn-danger">
+          <i class="fa fa-remove"></i>Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
