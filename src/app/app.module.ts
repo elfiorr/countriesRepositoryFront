@@ -7,12 +7,16 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CountriesComponent} from './country/countries.component';
 import {HomeComponent} from './home/home.component';
+import {CitiesComponent} from './cities/cities.component';
+import {ContinentsComponent} from './continents/continents.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesComponent,
-    HomeComponent
+    HomeComponent,
+    CitiesComponent,
+    ContinentsComponent
   ],
   imports: [
     BrowserModule,

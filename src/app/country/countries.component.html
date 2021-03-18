@@ -19,20 +19,14 @@
     <tbody>
     <tr *ngFor="let country of countries">
       <td><span>{{country.id}}</span></td>
-      <td><span>{{country.nameOfCountry}}</span></td>
-      <td><span>{{country.capital}}</span></td>
+      <td><span>{{country.nameOfCountry | titlecase}}</span></td>
+      <td><span>{{country.capital | titlecase}}</span></td>
       <td><span>{{country.surface}}</span></td>
-      <td><span>{{country.countryCode}}</span></td>
+      <td><span>{{country.countryCode.toUpperCase()}}</span></td>
       <td><span>{{country.telephoneCode}}</span></td>
       <td>
         <button class="btn btn-sm btn-info">
           <i class="fa fa-search"></i>Details
-        </button>
-        <button class="btn btn-sm btn-warning">
-          <i class="fa fa-edit"></i>Edit
-        </button>
-        <button class="btn btn-sm btn-danger">
-          <i class="fa fa-remove"></i>Delete
         </button>
       </td>
     </tr>
