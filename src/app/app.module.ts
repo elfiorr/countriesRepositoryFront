@@ -9,6 +9,7 @@ import {CountriesComponent} from './country/countries.component';
 import {HomeComponent} from './home/home.component';
 import {CitiesComponent} from './cities/cities.component';
 import {ContinentsComponent} from './continents/continents.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ContinentsComponent} from './continents/continents.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
