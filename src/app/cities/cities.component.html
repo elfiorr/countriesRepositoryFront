@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="border">
+    <button class="btn btn-md btn-outline-primary" (click)="open(content)">
+      <!--    <button class="btn btn-md btn-outline-primary" (click)="add(heroName.value); heroName.value=''"">-->
+      <i class="fa"></i>Add city
+    </button>
+    <select class="btn btn-md btn-outline-primary" >
+      <option value="">Please choose country</option>
+      <i class="fa"></i>Select country
+    </select>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name of city</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let city of cities">
+      <td><span>{{city.id}}</span></td>
+      <td><span>{{city.nameOfCity | titlecase}}</span></td>
+      <td>
+        <button class="btn btn-sm btn-info"
+                (click)="openDetails(contentDetails, city)">
+          <i class="fa fa-search"></i>Details
+        </button>
+        <button class="btn btn-sm btn-warning">
+          <i class="fa fa-edit"></i>Edit
+        </button>
+        <button class="btn btn-sm btn-danger">
+          <i class="fa fa-remove"></i>Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New city</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <div class="form-group">
+        <label for="nameOfCity">City</label>
+        <div class="input-group">
+          <input id="nameOfCity" class="form-control" name="nameOfCity" ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="idOfCountry">Country id</label>
+        <div class="input-group">
+          <input id="idOfCountry" class="form-control" name="countryId" ngModel>
+        </div>
+      </div>
+      <div class="border text-center">
+        <button data-dismiss="modal" class="btn btn-info">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #contentDetails let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title-details">City details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="nameOfCity">Name of city</label>
+      <div class="input-group">
+        <input id="nameOfCityDetails" class="form-control" readonly>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="idOfCountry">Id of country</label>
+      <div class="input-group">
+        <input id="idOfCountryDetails" class="form-control" readonly>
+      </div>
+    </div>
+  </form>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
